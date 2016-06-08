@@ -1,0 +1,47 @@
+<div class="main_wrap">
+    <div class="container">
+
+        <div ng-include="'app/components/header.html'"></div>
+
+        <h1>The Temptation Game</h1>
+        <img src="images/TemptationGameCreature.png"/>
+        <div class="content" ng-show="roundCtrl.page_status==0">
+
+            <p class="round_p">You have entered a round with Temptation. You have been tempted to <span>{{roundCtrl.input1}}</span>. You will use <span>{{roundCtrl.input2}}</span> to beat this round of Temptation.</p>
+            <div ng-show="roundCtrl.mins!=0">
+                <p class="round_p">This round will be over in</p>
+                <p class="timer">{{roundCtrl.message}}</p>
+            </div>
+
+            <div ng-show="roundCtrl.mins==0">
+                <p class="round_p">Times up! Did {{roundCtrl.input2}} work?</p>
+                <a  class="btn btn-success btn-ttg"  ng-click="roundCtrl.success()" style="margin-top:20px;"> Yes </a>
+                <a  class="btn btn-warning btn-ttg"  ng-click="roundCtrl.failure()" style="margin:20px 0px;"> No </a>
+            </div>
+            <a  class="btn btn-primary btn-ttg" ng-click="roundCtrl.playAgain()" style="margin:20px 0px;"> Back to Main Page </a>
+        </div>
+
+        <div class="content" ng-show="roundCtrl.page_status==1">
+            <span class="v">&nbsp;</span>
+            <span class="heading">Congratulations!</span>
+            <span class="heading">Share your success!</span>
+            <span class="heading">&nbsp;</span>
+            <p class="round_p">I just conquered a round of TheTemptationgGame! I defeated the temptation to <span>{{roundCtrl.input1}}</span> by <span>{{roundCtrl.input2}}</span>.</p>
+            <a  class="btn btn-success btn-ttg"  ng-click="roundCtrl.tweet()" style="margin:20px 0px;"> Post to Twitter </a>
+            <a  class="btn btn-primary btn-ttg" ng-click="roundCtrl.playAgain()" style="margin:20px 0px;"> Play Again </a>
+
+        </div>
+
+        <div class="content" ng-show="roundCtrl.page_status==2">
+            <span class="v">&nbsp;</span>
+            <span class="heading">Temptation won this round.</span>
+            <span class="heading">Share your results anyway?</span>
+            <span class="v">&nbsp;</span>
+
+            <p class="round_p">I just failed a round of TheTemptationgGame! I tried <span>{{roundCtrl.input2}}</span>, but still gave into the temptation to <span>{{roundCtrl.input1}}</span>.</p>
+            <a  class="btn btn-success btn-ttg"  ng-click="roundCtrl.tweet()" style="margin:20px 0px;"> Post to Twitter </a>
+            <a  class="btn btn-primary btn-ttg" ng-click="roundCtrl.playAgain()" style="margin:20px 0px;"> Play Again </a>
+
+        </div>
+    </div>
+</div>

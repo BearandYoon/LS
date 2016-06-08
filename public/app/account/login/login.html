@@ -1,0 +1,39 @@
+<div class="main_wrap">
+    <div class="container">
+        <h1>The Temptation Game</h1>
+        <img src="images/TemptationGameCreature.png"/>
+        <div class="content">
+
+            <form class="form" name="form" ng-submit="loginCtrl.signup(loginCtrl.user)" novalidate>
+
+                <div class="form-group">
+                    <span class="label">Email</span>
+                    <input type="email" name="email" ng-model="loginCtrl.user.email" required/>
+                </div>
+
+
+                <div class="form-group">
+                    <span class="label">Password</span>
+                    <input type="password" name="password" ng-model="loginCtrl.user.password" ng-minlength="3" required/>
+                </div>
+
+                <div ng-show="loginCtrl.showError">
+                    <p class="help-block">
+                        {{loginCtrl.errorMsg}}
+                    </p>
+                </div>
+                <div>
+                    <button class="btn btn-lg btn-primary" type="submit" ng-disabled="loginCtrl.isDisabled">
+                        Login
+                    </button>
+                    <a class="btn btn-lg btn-primary" ui-sref="signup">
+                        Signup
+                    </a>
+                </div>
+            </form>
+
+            <a  class="btn btn-success btn-ttg"  ui-sref="demo" style="margin:20px 0px;"> Try it out </a>
+
+        </div>
+    </div>
+</div>

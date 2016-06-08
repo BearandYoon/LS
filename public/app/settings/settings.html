@@ -1,0 +1,59 @@
+<div class="main_wrap">
+    <div class="container">
+        <div ng-include="'app/components/header.html'"></div>
+
+        <h1>The Temptation Game</h1>
+        <img src="images/TemptationGameCreature.png"/>
+        <div class="content">
+            <div class="close_account">
+                <h2 class="pull-left;"> Close My Acocunt</h2>
+                <div>
+                    <button class="btn btn-lg btn-danger btn-ttg" ng-click="settingsCtrl.closeAccount()" ng-disabled="settingsCtrl.isDisabled">
+                        Close Account
+                    </button>
+                </div>
+            </div>
+
+            <form class="form" name="form" ng-submit="settingsCtrl.changePassword(settingsCtrl.user)" novalidate>
+
+                <h2 class="pull-left;"> Change Password</h2>
+
+                <div class="form-group hidden " >
+                    <span class="label">Email</span>
+                    <input type="email" name="email" ng-model="loginCtrl.user.email" required/>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="oldpassword" placeholder="Current Password" ng-model="settingsCtrl.user.oldpassword"  required/>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="New Password" ng-model="settingsCtrl.user.password"  required/>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="confirmPassword" placeholder="Confirm New Password" ng-model="settingsCtrl.user.confirmPassword" match="settingsCtrl.user.password"  required/>
+                    <p class="help-block" ng-show="settingsCtrl.error.confirmPassword">
+                        Passwords must match.
+                    </p>
+                </div>
+                <div ng-show="settingsCtrl.showError">
+                    <p class="help-block">
+                        {{settingsCtrl.errorMsg}}
+                    </p>
+                </div>
+                <div>
+                    <button class="btn btn-lg btn-primary btn-ttg" type="submit" ng-disabled="settingsCtrl.isDisabled">
+                        Change Password
+                    </button>
+                </div>
+            </form>
+
+            <div>
+                <button class="btn btn-lg btn-success btn-ttg" ui-sref="main" ng-disabled="settingsCtrl.isDisabled" style="margin:20px 0px;">
+                    Back to Main Page
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

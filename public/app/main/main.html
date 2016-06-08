@@ -1,0 +1,36 @@
+<div class="main_wrap">
+    <div class="container">
+        <div ng-include="'app/components/header.html'"></div>
+
+        <h1>The Temptation Game</h1>
+        <img src="images/TemptationGameCreature.png"/>
+        <div class="content">
+
+            <span class="label">I am being tempted to...</span>
+            <input type="text" ng-model="input1" ng-change="mainCtrl.getInput2Prediction(input1)" typeahead="row for row in mainCtrl.input1options | filter:$viewValue | limitTo:8" >
+
+            <span class="label">I will beat this round by...</span>
+            <input type="text" ng-model="input2"  typeahead="row.input2 as row.text for row in mainCtrl.input2options | filter:$viewValue | limitTo:8" >
+
+            <div class="input2predictions" ng-repeat="prediction in mainCtrl.input2options | limitTo:mainCtrl.limit">
+                <a href="" ng-click="mainCtrl.input2Select(prediction)">
+                    <span class="title" > {{prediction.input2}} </span>
+                    <span class="rate" > {{prediction.prediction}} </span>
+                </a>
+
+            </div>
+            <span style="width:80%; display:inline-block" ng-show="mainCtrl.input2options.length>0 && mainCtrl.limit!=10 && mainCtrl.input2options.length > mainCtrl.limit">
+                <a href="" ng-click="mainCtrl.showTop10()" class="pull-right" style="color: #000;">
+                    show Top 10 <span class="glyphicon glyphicon-menu-down"></span>
+                </a>
+            </span>
+            <span class="label">This round will Last for...</span>
+
+            <select ng-model="mainCtrl.min_select" ng-options="option.name for option in mainCtrl.options  track by option.value">
+
+            </select>
+
+            <a  class="btn btn-primary btn-ttg" ng-disabled="mainCtrl.disableStartButton"  ui-sref="round({mins: mainCtrl.min_select.value, input1:input1, input2: input2})" style="margin:20px 0px;"> Start </a>
+        </div>
+    </div>
+</div>

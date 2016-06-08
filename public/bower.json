@@ -1,0 +1,30 @@
+{
+  "name": "SuperBrowsing",
+  "authors": [
+    "stan <freelancer1104@gmail.com>"
+  ],
+  "description": "SuperBrowsing",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-bootstrap": "~0.14.3",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.6",
+    "ngstorage": "~0.3.10",
+    "angular-cookies": "~1.4.8",
+    "lodash": "~3.10.1",
+    "angular-filter": "~0.5.8"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "LS-APP-backend",
+  "decription": "LS App Backend API",
+  "private": true,
+  "author": "luckyseven1104",
+  "devDependencies": {
+    "morgan": "~1.6.0",
+    "nodemon": "^1.8.1",
+    "q": "^1.4.1",
+    "supertest": "^0.15.0",
+    "through": "~2.3.7",
+    "winston": "~1.0.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "scripts/run",
+    "test": "mocha -R spec --compilers js:babel/register --recursive",
+    "postinstall": "scripts/precompile",
+    "build": "scripts/precompile"
+  },
+  "dependencies": {
+    "Faker": "~0.7.2",
+    "async": "^0.9.0",
+    "aws-sdk": "^2.1.48",
+    "babel": "^5.6.14",
+    "babel-runtime": "^5.8.20",
+    "bluebird": "^2.9.34",
+    "body-parser": "^1.13.2",
+    "bower": "^1.3.12",
+    "cors": "*",
+    "express": "^4.13.1",
+    "google-search": "0.0.3",
+    "https": "^1.0.0",
+    "jQuery": "^1.7.4",
+    "jquery": "^2.2.3",
+    "jsdom": "^9.1.0",
+    "jsonwebtoken": "~5.0.4",
+    "lodash": "^3.10.1",
+    "mongoose": "*",
+    "mongoose-model-update": "^1.5.0",
+    "mongoose-timestamp": "^0.4.0",
+    "morgan": "~1.6.0",
+    "multer": "~0.1.6",
+    "passport": "~0.2.2",
+    "passport-local": "~1.0.0",
+    "q": "^1.4.1",
+    "through": "~2.3.7",
+    "winston": "~1.0.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}

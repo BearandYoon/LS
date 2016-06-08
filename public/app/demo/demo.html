@@ -1,0 +1,62 @@
+<div class="main_wrap">
+    <div class="container">
+        <div ng-include="'app/components/login_header.html'"></div>
+
+        <h1>The Temptation Game</h1>
+        <img src="images/TemptationGameCreature.png"/>
+        <div class="content" ng-show="demoCtrl.page_status==-1">
+
+            <span class="label">I am being tempted to...</span>
+            <input type="text" ng-model="input1">
+
+            <span class="label">I will beat this round by...</span>
+            <input type="text" ng-model="input2">
+
+            <span class="label">This round will Last for...</span>
+
+            <select ng-model="demoCtrl.min_select" ng-options="option.name for option in demoCtrl.options  track by option.value">
+
+            </select>
+            <div>
+                <a  class="btn btn-primary btn-ttg" ng-disabled="demoCtrl.disableStartButton"  ng-click="demoCtrl.start()" style="margin:20px 0px;"> Start </a>
+            </div>
+        </div>
+
+        <div class="content" ng-show="demoCtrl.page_status==0">
+
+            <p class="round_p">You have entered a round with Temptation. You have been tempted to <span>{{demoCtrl.input1}}</span>. You will use <span>{{demoCtrl.input2}}</span> to beat this round of Temptation.</p>
+            <div ng-show="demoCtrl.mins!=0">
+                <p class="round_p">This round will be over in</p>
+                <p class="timer">{{demoCtrl.message}}</p>
+            </div>
+
+            <div ng-show="demoCtrl.mins==0">
+                <p class="round_p">Times up! Did {{demoCtrl.input2}} work?</p>
+                <a  class="btn btn-success btn-ttg"  ng-click="demoCtrl.success()" style="margin-top:20px;"> Yes </a>
+                <a  class="btn btn-warning btn-ttg"  ng-click="demoCtrl.failure()" style="margin:20px 0px;"> No </a>
+            </div>
+        </div>
+
+        <div class="content" ng-show="demoCtrl.page_status==1">
+            <span class="v">&nbsp;</span>
+            <span class="heading">Congratulations!</span>
+            <span class="heading">Share your success!</span>
+            <span class="heading">&nbsp;</span>
+            <p class="round_p">I just conquered a round of #TheTemptationgGame! I defeated the temptation to <span>{{demoCtrl.input1}}</span> by <span>{{demoCtrl.input2}}</span>.</p>
+            <a  class="btn btn-success btn-ttg"  ng-click="demoCtrl.tweet()" style="margin:20px 0px;"> Post to Twitter </a>
+
+
+        </div>
+
+        <div class="content" ng-show="demoCtrl.page_status==2">
+            <span class="v">&nbsp;</span>
+            <span class="heading">Temptation won this round.</span>
+            <span class="heading">Share your results anyway?</span>
+            <span class="v">&nbsp;</span>
+
+            <p class="round_p">I just failed a round of #TheTemptationgGame! I tried <span>{{demoCtrl.input2}}</span>, but still gave into the temptation to <span>{{demoCtrl.input1}}</span>.</p>
+            <a  class="btn btn-success btn-ttg"  ng-click="demoCtrl.tweet()" style="margin:20px 0px;"> Post to Twitter </a>
+
+        </div>
+    </div>
+</div>
