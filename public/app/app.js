@@ -31,7 +31,6 @@
                     controllerAs: 'settingsCtrl'
                 });
 
-
             $urlRouterProvider.otherwise('/login');
 
             $httpProvider.interceptors.push(function( $q, $location, $localStorage, $injector ) {
@@ -65,6 +64,5 @@
                     })
             });
         });
-
 })();
 

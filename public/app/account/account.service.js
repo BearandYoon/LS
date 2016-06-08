@@ -46,8 +46,8 @@
                 var deferred = $q.defer();
                 var deleteRequest = {
                     method: 'DELETE',
-                    url: $rootScope.baseUrl + 'me',
-                }
+                    url: $rootScope.baseUrl + 'me'
+                };
                 $http(deleteRequest).success(function(data){
                     deferred.resolve(data)
                 }).error(function(err){

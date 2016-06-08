@@ -34,5 +34,5 @@ node_modules
 
 # AngularJs Dependency Directory
 bower_components
-
+dist
 .idea

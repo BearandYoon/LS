@@ -1,9 +1,9 @@
 {
-  "name": "SuperBrowsing",
+  "name": "ls",
   "authors": [
-    "stan <freelancer1104@gmail.com>"
+    "luckyseven1104 <freelancer1104@gmail.com>"
   ],
-  "description": "SuperBrowsing",
+  "description": "LS",
   "main": "index.html",
   "moduleType": [
     "node"
