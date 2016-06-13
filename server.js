@@ -14,7 +14,7 @@ console.log(env);
 var config = require('./config/config')[env];
 var app = express();
 
-
+app.use(cors());
 app.set('superSecret', config.secret);
 app.use(morgan('short', {
     stream: logger.asStream('info')
@@ -22,7 +22,7 @@ app.use(morgan('short', {
 
 app.use(express.static('./public'));
 
-app.use(cors());
+
 // Bootstrap db connection
 
 //fs.readdirSync(models_path).forEach(function (file) {
@@ -59,7 +59,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(function(req, res, next) {
-    res.set('X-Powered-By', 'TemptationGame');
+    res.set('X-Powered-By', 'LS');
     next();
 });
 

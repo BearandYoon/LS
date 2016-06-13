@@ -3,12 +3,10 @@ let env = process.env.NODE_ENV || 'development';
 let config = require('../../config/config')[env];
 
 import { User } from '../models';
-import { Friend } from '../models';
 var fs = require('fs');
 
 
 async function login(req, res, next) {
-
     var userID = req.body.userID;
     var password = req.body.password;
 

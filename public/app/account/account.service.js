@@ -64,6 +64,8 @@
                     data: user
                 };
 
+                console.log('user-login = ', user);
+                console.log('loginRequest =  ', loginRequest);
                 $http(loginRequest).success(function(data){
                     deferred.resolve(data)
                 }).error(function(err){

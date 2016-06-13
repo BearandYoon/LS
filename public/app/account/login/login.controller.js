@@ -23,6 +23,7 @@
                     $state.go('main');
                 }, function(err){
                     vm.showError = true;
+                    console.log('login-err = ', err);
                     vm.errorMsg = err.showToUser;
                     console.log(err);
                 })

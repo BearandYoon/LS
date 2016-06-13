@@ -6,6 +6,26 @@
 
             //$locationProvider.html5Mode(true);
             $stateProvider
+                .state('login', {
+                    url: "/login",
+                    templateUrl: "app/account/login/login.html",
+                    controller: 'LoginController',
+                    controllerAs: 'loginCtrl'
+                })
+                .state('signup', {
+                    url: "/signup",
+                    templateUrl: "app/account/signup/signup.html",
+                    controller: 'SignupController',
+                    controllerAs: 'signupCtrl'
+                })
+                .state('logout', {
+                    url: '/logout?referrer',
+                    referrer: 'main',
+                    template: '',
+                    controller: function($account) {
+                        $account.logout();
+                    }
+                })
                 .state('main', {
                     url: "/main",
                     templateUrl: "app/main/main.html",
@@ -51,7 +71,7 @@
             });
         })
         .run(function($rootScope, $state, $account, $localStorage){
-            $rootScope.baseUrl = "localhost:3000/api/";
+            $rootScope.baseUrl = "http://localhost:3000/api/";
 
             $rootScope.$on('$stateChangeStart', function(event, next) {
                 if(next.name == 'login' || next.name == 'signup' || next.name == 'demo') return false;
