@@ -64,16 +64,16 @@
                     data: user
                 };
 
-                console.log('user-login = ', user);
-                console.log('loginRequest =  ', loginRequest);
                 $http(loginRequest).success(function(data){
                     deferred.resolve(data)
                 }).error(function(err){
+                    console.log('login-error = ', err);
                     deferred.reject(err);
                 });
 
                 return deferred.promise;
             }
+
             function signup(user){
                 var deferred = $q.defer();
                 var loginRequest = {

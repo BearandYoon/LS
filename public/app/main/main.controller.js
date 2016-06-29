@@ -5,7 +5,6 @@
         .module('temptationApp')
         .controller('MainController', MainController);
 
-
     function MainController($rootScope, $scope, $state, $account, $http) {
         var vm = this;
 

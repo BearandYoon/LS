@@ -16,8 +16,7 @@
         vm.signup = function(user){
             $account.login(user)
                 .then(function(response){
-                    console.log(response);
-                    var userdata = response;
+                    console.log('loginController-signup = ', response);
                     $rootScope.currentUser = response;
                     $localStorage.currentUser = response;
                     $state.go('main');

@@ -5,7 +5,6 @@ let config = require('../../config/config')[env];
 import { User } from '../models';
 var fs = require('fs');
 
-
 async function login(req, res, next) {
     var userID = req.body.userID;
     var password = req.body.password;
