@@ -2,14 +2,13 @@
     <div class="container">
         <img src="images/TemptationGameCreature.png"/>
         <div class="content">
+            <span class="label">Log in</span>
             <form class="form" name="LoginForm" ng-submit="LoginForm.$valid && loginCtrl.signup(loginCtrl.user)">
                 <div class="form-group">
-                    <span class="label">Email</span>
-                    <input type="email" name="email" ng-model="loginCtrl.user.email" ng-required="true"/>
+                    <input type="text" name="userId" ng-model="loginCtrl.user.userID" ng-required="true" placeholder="Your ID"/>
                 </div>
                 <div class="form-group">
-                    <span class="label">Password</span>
-                    <input type="password" name="password" ng-model="loginCtrl.user.password" ng-minlength="3" required/>
+                    <input type="password" name="password" ng-model="loginCtrl.user.password" ng-minlength="3" required placeholder="Password"/>
                 </div>
                 <div ng-show="loginCtrl.showError">
                     <p class="help-block">
@@ -25,7 +24,6 @@
                     </a>
                 </div>
             </form>
-            <a class="btn btn-success btn-ttg"  ui-sref="demo" style="margin:20px 0px;"> Try it out </a>
         </div>
     </div>
 </div>

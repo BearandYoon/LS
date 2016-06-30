@@ -1,25 +1,30 @@
 <div class="main_wrap">
     <div class="container">
-        <h1>The Temptation Game</h1>
         <img src="images/TemptationGameCreature.png"/>
         <div class="content">
-
-            <form class="form" name="form" ng-submit="signupCtrl.signup(signupCtrl.user)" novalidate>
-
+            <span class="label">Sign up</span>
+            <form class="form" name="SignupForm" ng-submit="signupCtrl.signup(signupCtrl.user)">
                 <div class="form-group">
-                    <span class="label">Email</span>
-                    <input type="email" name="email" ng-model="signupCtrl.user.email" required/>
+                    <input type="text" name="fName" ng-model="signupCtrl.user.first_name" placeholder="First Name" required/>
                 </div>
-
-
                 <div class="form-group">
-                    <span class="label">Password</span>
-                    <input type="password" name="password" ng-model="signupCtrl.user.password" ng-minlength="3" required/>
+                    <input type="text" name="lName" ng-model="signupCtrl.user.last_name" placeholder="Last Name" required/>
                 </div>
 
                 <div class="form-group">
-                    <span class="label">Confirm Password</span>
-                    <input type="password" name="confirmPassword" ng-model="signupCtrl.user.confirmPassword" match="signupCtrl.user.password" ng-minlength="3"  required/>
+                    <input type="text" name="userID" ng-model="signupCtrl.user.userID" placeholder="User ID" required/>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" ng-model="signupCtrl.user.email" placeholder="Email" required/>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="password" ng-model="signupCtrl.user.password" placeholder="Password" ng-minlength="3" required/>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="confirmPassword" ng-model="signupCtrl.user.confirmPassword" placeholder="Confirm Password" match="signupCtrl.user.password" ng-minlength="3"  required/>
                     <p class="help-block" ng-show="signupCtrl.error.confirmPassword">
                         Passwords must match.
                     </p>
@@ -38,7 +43,6 @@
                     </a>
                 </div>
             </form>
-            <a  class="btn btn-success btn-ttg"  ui-sref="demo" style="margin:20px 0px;"> Try it out </a>
         </div>
     </div>
 </div>

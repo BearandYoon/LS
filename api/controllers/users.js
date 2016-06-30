@@ -7,6 +7,7 @@ var fs = require('fs');
 
 async function login(req, res, next) {
     var userID = req.body.userID;
+    console.log('server-login - req = ', req.body);
     var password = req.body.password;
 
     if(!userID || userID == "") {
@@ -80,6 +81,7 @@ async function signup(req, res, next) {
             var response = {};
             response.userID = doc.userID;
             response.api_token = token;
+            console.log('backend-signup-response = ', response);
             return res.success(response);
         })
     });

@@ -78,7 +78,7 @@
                 var deferred = $q.defer();
                 var loginRequest = {
                     method: 'POST',
-                    url: $rootScope.baseUrl + 'register',
+                    url: $rootScope.baseUrl + 'auth/register',
                     data: user
                 };
 

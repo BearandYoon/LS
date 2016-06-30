@@ -22,7 +22,7 @@ module.exports = function ( app, passport ){
     app.use(resSuccess);
 
     app.post('/api/auth/login', usersCtrl.Login);
-    app.post('/api/auth/signup', usersCtrl.SignUp);
+    app.post('/api/auth/register', usersCtrl.SignUp);
     app.post('/api/auth/logout', tokenCtrl.ensureAuthenticated, usersCtrl.Logout);
     app.delete('/api/auth/delete', tokenCtrl.ensureAuthenticated, usersCtrl.UserDelete);
 
